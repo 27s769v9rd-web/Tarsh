@@ -2,16 +2,16 @@
   File: spiral.py
   Description:
 
-  Student Name:
-  Student UT EID:
+  Student Name: Jeff Zheng
+  Student UT EID: jrz554
 
-  Partner Name:
-  Partner UT EID:
+  Partner Name: N/A
+  Partner UT EID: N/A
 
   Course Name: CS 313E
-  Unique Number: 
-  Date Created:
-  Date Last Modified:
+  Unique Number: 54150
+  Date Created: Sep 11
+  Date Last Modified: Sep 11
 
  Input: n is an odd integer between 1 and 100
  Output: returns a 2-D list representing a spiral
@@ -33,8 +33,27 @@ import math
 
 def create_spiral(dim):
     """Creates a Spiral given a dimension for the spiral dimeter"""
+  #Setup
+  if dim % 2 == 0:
+    dim += 1
+  grid = [[0] * dim for _ in range(dim)]
+  #Put a 1 in the center
+  row = col = dim // 2
+  grid[row][col] = 1
+  
+  num = 1
+  total = dim * dim
 
-    # ADD YOUR CODE HERE  
+  #Direction cycle
+  directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+  d = 0
+  step = 1
+
+  #Keep filling
+  while num < total:
+    for i in range(2):
+      drow, dcol = directions[d]
+      
   
 
 
@@ -50,10 +69,11 @@ def sum_sub_grid(grid, val):
     if val is out of bounds, returns 0
     """
     
-    # ADD YOUR CODE HERE  
+  dim = len(grid)
+  
+  
 
-
-    return # ADD YOUR CODE HERE  
+  return # ADD YOUR CODE HERE  
 
 
 
