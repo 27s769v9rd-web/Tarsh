@@ -53,10 +53,17 @@ def create_spiral(dim):
   while num < total:
     for i in range(2):
       drow, dcol = directions[d]
-      
-  
-
-
+      for j in range(step):
+        row += drow
+        col += dcol
+        if 0 <= row < dim and 0 <= col < dim:
+          num += 1
+          grid[row][col] = num
+          if num == total:
+            return grid
+      d = (d + 1) % 4
+    step += 1
+  return grid
 
 def sum_sub_grid(grid, val):
     """
@@ -70,14 +77,26 @@ def sum_sub_grid(grid, val):
     """
     
   dim = len(grid)
-  
-  
 
-  return # ADD YOUR CODE HERE  
-
-
-
-
+  #locate val in the grid
+  position = None
+  for i in range(dim):
+    for j in range(dim):
+      if grid[i][j] == val:
+        pos = (i,j)
+        break
+    if pos i not None:
+      Break
+  if pos is None:
+    return 0
+  #scan the blocks around val and add it
+  row, col = pos
+  total = 0
+  for i in range(row - 1, raw + 2):
+    for j in range(col - 1, col + 2):
+      if 0 <= i < dim and 0 <= j < dim and (i, j) != (row, col):
+        total += grid[i]][j]
+  return total
 
 def main():
     """
