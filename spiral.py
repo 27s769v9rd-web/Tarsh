@@ -65,7 +65,7 @@ def create_spiral(dim):
     step += 1
   return grid
 
-def sum_sub_grid(grid, val):
+def sum_adjacent_numbers(grid, val):
     """
     Input: grid a 2-D list containing a spiral of numbers
            val is a number within the range of numbers in
@@ -75,7 +75,7 @@ def sum_sub_grid(grid, val):
     surrounding the parameter val in the grid
     if val is out of bounds, returns 0
     """
-    
+  
   dim = len(grid)
 
   #locate val in the grid
@@ -119,7 +119,7 @@ def main():
             sum_val = int(input())
 
             # find sum of adjacent terms
-            adj_sum = sum_sub_grid(mat, sum_val)
+            adj_sum = sum_adjacent_numbers(mat, sum_val)
 
             # print the sum
             print(adj_sum)
